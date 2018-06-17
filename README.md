@@ -10,7 +10,7 @@ libraries, or run a `hibb` server to check hashed or plaintext passwords.
 
 ## Installation
 
-To download the Bloom filter and build/install the server, simple run the Makefile:
+To generate the Bloom filter and build/install the server, simple run the Makefile:
 
     make
 
@@ -25,11 +25,12 @@ After installation, the `hibb` server can be started as follows:
 
     hibb
 
-You may also specify a different file location using the `-f` flag, as well
-as a different bind address (default: `0.0.0.0:8000`) using the `-b` flag.
+You may also specify a different file location for the Bloom filter using the
+`-f` flag, as well as a different bind address (default: `0.0.0.0:8000`)
+using the `-b` flag.
 
-The server needs several seconds to load the Bloom filter in memory, as soon
-as it's up you can query both plaintext passwords (not recommended) or UPPERCASE
+The server needs several seconds to load the Bloom filter into memory, as soon
+as it's up you can query plaintext passwords (not recommended) or UPPERCASE
 SHA-1 values (preferred) via the `/check` and `/check-sha1` endpoints.
 Simply pass the value in the query string:
 
@@ -37,11 +38,12 @@ Simply pass the value in the query string:
     http://localhost:8000/check-sha1?D033E22AE348AEB5660FC2140AEC35850C4DA997
 
 If the value is in the filter, the server will return a 200 status code,
-otherwise a 418 (I'm a teapot). The latter is used to be distinguishable from a
+otherwise a 418 (I'm a teapot). The latter is used to be distinguishable from
 a 404 that you might receive for other reaons (e.g. misconfigured servers).
 
 ## Performance
 
 On a Thinkpad 460p, the Golang server manages to process 17.000 requests per
 second while also generating and processing the requests via `ab` (Apache Bench).
-Performance on a "real" server should be even better.
+Performance on a "real" server should be even better. The server requires about
+1.7 GB of memory (i.e. the size of the Bloom filter).
