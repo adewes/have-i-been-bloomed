@@ -41,6 +41,20 @@ If the value is in the filter, the server will return a 200 status code,
 otherwise a 418 (I'm a teapot). The latter is used to be distinguishable from
 a 404 that you might receive for other reaons (e.g. misconfigured servers).
 
+## CLI Usage
+
+You can use the `bloom` command line tool to check SHA-1 values directly
+against the filter:
+
+    echo "admin" | tr -d "\n" | sha1sum - | tr [a-z] [A-Z] | awk -F" " '{print $1}' | bloom check pwned-passwords-2.0.bloom
+
+Or interactively:
+
+    bloom -i check pwned-passwords-2.0.bloom
+    Interactive mode: Enter a blank line [by pressing ENTER] to exit.
+    D033E22AE348AEB5660FC2140AEC35850C4DA997
+    >D033E22AE348AEB5660FC2140AEC35850C4DA997
+
 ## Performance
 
 On a Thinkpad 460p, the Golang server manages to process 17.000 requests per
