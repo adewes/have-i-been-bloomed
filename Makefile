@@ -7,13 +7,13 @@ pwned-passwords-2.0.txt.7z:
 # create the Bloom filter
 pwned-passwords-2.0.bloom: pwned-passwords-2.0.txt.7z
 	bloom --gzip create -p 1e-6 -n 501636842 pwned-passwords-2.0.bloom
-	7z x pwned-passwords-2.0.txt.7z -so | awk -F":" '{print $1}' | bloom insert pwned-passwords-2.0.bloom
+	7z x pwned-passwords-2.0.txt.7z -so | awk -F":" '{print $1}' | bloom --gzip insert pwned-passwords-2.0.bloom
 
 bloom-filter: pwned-passwords-2.0.bloom
 
 bloom-tool:
-	go get github.com/adewes/bloom
-	go install github.com/adewes/bloom
+	go get github.com/dcso/bloom
+	go install github.com/dcso/bloom/bloom
 
 server:
 	go get ./...
