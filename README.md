@@ -19,6 +19,23 @@ and build the Golang server. You will need about 10.5 GB of space during the
 creation of the filter (1.7 GB for the filter alone and 8.8 GB for the 7z
 password file, which you can delete after creating the filter).
 
+## Testing
+
+To test your setup with a smaller filter, you can run
+
+    make test
+
+This will build a small test filter with only the first 100 entries from the HIBP database.
+Then, you can run
+
+    make run-test
+
+To run a `hibb` server with the small test filter. Running
+
+    curl -i http://localhost:8000/check-sha1?B0399D2029F64D445BD131FFAA399A42D2F8E7DC
+
+should then return a `200` status code. 
+
 ## Server Usage
 
 After installation, the `hibb` server can be started as follows:
@@ -35,7 +52,8 @@ SHA-1 values (preferred) via the `/check` and `/check-sha1` endpoints.
 Simply pass the value in the query string:
 
     http://localhost:8000/check?admin
-    http://localhost:8000/check-sha1?D033E22AE348AEB5660FC2140AEC35850C4DA997
+    # the query below should return 200 with the test filter
+    http://localhost:8000/check-sha1?B0399D2029F64D445BD131FFAA399A42D2F8E7DC
 
 If the value is in the filter, the server will return a 200 status code,
 otherwise a 418 (I'm a teapot). The latter is used to be distinguishable from
@@ -52,8 +70,8 @@ Or interactively:
 
     bloom -i check pwned-passwords-2.0.bloom
     Interactive mode: Enter a blank line [by pressing ENTER] to exit.
-    D033E22AE348AEB5660FC2140AEC35850C4DA997
-    >D033E22AE348AEB5660FC2140AEC35850C4DA997
+    B0399D2029F64D445BD131FFAA399A42D2F8E7DC
+    >B0399D2029F64D445BD131FFAA399A42D2F8E7DC
 
 ## Performance
 

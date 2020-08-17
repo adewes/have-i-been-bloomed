@@ -44,7 +44,7 @@ func main() {
 	bind := flag.String("b", "0.0.0.0:8000", "The address to which to bind")
 	flag.Parse()
 	fmt.Printf("Loading Bloom filter from %s...\n", *filename)
-	filter, err = bloom.LoadFilter(*filename, false)
+	filter, err = bloom.LoadFilter(*filename, true)
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(-1)
