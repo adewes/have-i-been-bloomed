@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dcso/bloom"
+	"github.com/DCSO/bloom"
 	"crypto/sha1"
 	"net/http"
 	"flag"

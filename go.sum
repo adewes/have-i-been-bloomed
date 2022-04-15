@@ -1,8 +1,11 @@
+github.com/DCSO/bloom v0.2.3 h1:0w2dkdBxCrMn148XxMIznydiG5+DG/sK6MXDVBd58HY=
 github.com/DCSO/bloom v0.2.3 h1:QVatZ34XB0aFrr7OSGDztgWwlYwOIF+wFRo6L8Er9vE=
 github.com/DCSO/bloom v0.2.3/go.mod h1:KUqcoyCSFP4wHsEScGtpIUlte5FDr5bBrCyzDK96xQM=
-github.com/dcso/bloom v0.2.3 h1:0w2dkdBxCrMn148XxMIznydiG5+DG/sK6MXDVBd58HY=
-github.com/dcso/bloom v0.2.3/go.mod h1:MRdj/aeX8tYr6hl1VbUBFUwtp2BhY9ZD9ixtVDr6l04=
-github.com/dcso/bloom v0.2.4-0.20200601223828-b384c48a4107 h1:I+QfzlNv4kL58pk0shU7OfYGE+hfxs4iJKFwPNOe8co=
+github.com/DCSO/bloom v0.2.3/go.mod h1:MRdj/aeX8tYr6hl1VbUBFUwtp2BhY9ZD9ixtVDr6l04=
+github.com/DCSO/bloom v0.2.4-0.20200601223828-b384c48a4107 h1:I+QfzlNv4kL58pk0shU7OfYGE+hfxs4iJKFwPNOe8co=
+github.com/DCSO/bloom v0.2.4-0.20200601223828-b384c48a4107/go.mod h1:MRdj/aeX8tYr6hl1VbUBFUwtp2BhY9ZD9ixtVDr6l04=
+github.com/DCSO/bloom v0.2.4 h1:GYQuxfH7Q4mS+LM1iEVSSjkXbS5FyFSyh/n4y45X14c=
+github.com/DCSO/bloom v0.2.4/go.mod h1:G/tm7BJ6j725OJIGl5MCNpbbJbl09+8QWMNLr9mDLJ0=
 github.com/dcso/bloom v0.2.4-0.20200601223828-b384c48a4107/go.mod h1:MRdj/aeX8tYr6hl1VbUBFUwtp2BhY9ZD9ixtVDr6l04=
 gopkg.in/urfave/cli.v1 v1.20.0 h1:NdAVW6RYxDif9DhDHaAortIu956m2c0v+09AZBPTbE0=
 gopkg.in/urfave/cli.v1 v1.20.0/go.mod h1:vuBzUtMdQeixQj8LVd+/98pzhxNGQoyuPBlsXHOQNO0=

@@ -18,8 +18,8 @@ pwned-passwords-2.0.bloom.gz: pwned-passwords-2.0.txt.7z
 bloom-filter: pwned-passwords-2.0.bloom.gz
 
 bloom-tool:
-	go get github.com/dcso/bloom
-	go install github.com/dcso/bloom/bloom
+	go get github.com/DCSO/bloom
+	go install github.com/DCSO/bloom/bloom
 
 test: bloom-tool server test-filter
 
