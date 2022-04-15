@@ -11,7 +11,7 @@ test-filter:
 	7z x pwned-passwords-2.0.txt.7z -so | awk -F":" '{print $$1}' | head -n 100 | bloom --gzip insert pwned-passwords-2.0.bloom.test.gz
 
 # create the Bloom filter
-pwned-passwords-2.0.bloom: pwned-passwords-2.0.txt.7z
+pwned-passwords-2.0.bloom.gz: pwned-passwords-2.0.txt.7z
 	bloom --gzip create -p 1e-6 -n ${N} pwned-passwords-2.0.bloom.gz
 	7z x pwned-passwords-2.0.txt.7z -so | awk -F":" '{print $$1}' | bloom --gzip insert pwned-passwords-2.0.bloom.gz
 

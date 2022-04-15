@@ -64,7 +64,7 @@ a 404 that you might receive for other reaons (e.g. misconfigured servers).
 You can use the `bloom` command line tool to check SHA-1 values directly
 against the filter:
 
-    echo "admin" | tr -d "\n" | sha1sum - | tr [a-z] [A-Z] | awk -F" " '{print $1}' | bloom check pwned-passwords-2.0.bloom
+    echo "admin" | tr -d "\n" | sha1sum - | tr [a-z] [A-Z] | awk -F" " '{print $1}' | bloom check pwned-passwords-2.0.bloom.gz
 
 Or interactively:
 
