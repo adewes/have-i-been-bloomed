@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dcso/bloom"
+	"github.com/DCSO/bloom"
 	"crypto/sha1"
 	"net/http"
 	"flag"
@@ -40,7 +40,7 @@ func checkSHA1(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	var err error
-	filename := flag.String("f", "pwned-passwords-2.0.bloom.gz", "The Bloom filter to load")
+	filename := flag.String("f", "pwned-passwords-8.0.bloom.gz", "The Bloom filter to load")
 	bind := flag.String("b", "0.0.0.0:8000", "The address to which to bind")
 	flag.Parse()
 	fmt.Printf("Loading Bloom filter from %s...\n", *filename)
